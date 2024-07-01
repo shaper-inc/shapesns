@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD} 
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER} 
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  wordpress:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 10090:80
+    environment:
+      WORDPRESS_DB_HOST: db:3306 
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
+      WORDPRESS_DEBUG: 1 # debut mode == ON
+    volumes:
+      - ./html:/var/www/html
+      - ./shapersns:/var/www/html/wp-content/plugins/shapersns
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin_ingrid
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 10099:80
