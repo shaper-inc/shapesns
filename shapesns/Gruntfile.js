@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 
 		addtextdomain: {
 			options: {
-				textdomain: 'shapersns',
+				textdomain: 'shapesns',
 			},
 			update_all_domains: {
 				options: {
@@ -32,8 +32,8 @@ module.exports = function( grunt ) {
 				options: {
 					domainPath: '/languages',
 					exclude: [ '\.git/*', 'bin/*', 'node_modules/*', 'tests/*' ],
-					mainFile: 'shapersns.php',
-					potFilename: 'shapersns.pot',
+					mainFile: 'shapesns.php',
+					potFilename: 'shapesns.pot',
 					potHeaders: {
 						poedit: true,
 						'x-poedit-keywordslist': true
