@@ -121,7 +121,8 @@ fabric.properties
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -215,3 +216,19 @@ wp-config.php
 
 
 # End of https://www.toptal.com/developers/gitignore/api/wordpress,jetbrains,osx,windows
+
+
+# wp plugin development
+phpcs.xml
+phpunit.xml
+wp-cli.local.yml
+node_modules/
+*.sql
+*.tar.gz
+*.zip
+
+# wordpress:latest home
+html
+
+# environtment 
+.env
