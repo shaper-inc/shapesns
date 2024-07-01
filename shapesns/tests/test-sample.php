@@ -2,7 +2,7 @@
 /**
  * Class SampleTest
  *
- * @package Shapersns
+ * @package Shapesns
  */
 
 /**
