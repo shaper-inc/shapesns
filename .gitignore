@@ -226,3 +226,9 @@ node_modules/
 *.sql
 *.tar.gz
 *.zip
+
+# wordpress:latest home
+html
+
+# environtment 
+.env
