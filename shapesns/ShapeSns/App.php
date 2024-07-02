@@ -26,6 +26,14 @@ class App extends AppBase
         );
     }
 
+    function action_wp_enqueue_scripts()
+    {
+        # Javvascriptを配信
+        # https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+        # https://developer.wordpress.org/reference/functions/plugins_url/
+        wp_enqueue_script('shapesns', plugins_url('/js/shapesns.js', dirname(__FILE__)));
+    }
+
     # TOOD:
     # wordpress hook を実装する
 }
