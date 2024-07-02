@@ -27,6 +27,7 @@ services:
     volumes:
       - ./html:/var/www/html
       - ./shapesns:/var/www/html/wp-content/plugins/shapesns
+      - ./wp-cli.yml:/var/www/html/wp-cli.yml
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest

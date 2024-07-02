@@ -26,12 +26,19 @@ class App extends AppBase
         );
     }
 
+
+    function summarize_post($post_id)
+    {
+        # post_id の記事の要約を取得する
+        echo  $post_id;
+
     function action_wp_enqueue_scripts()
     {
         # Javvascriptを配信
         # https://developer.wordpress.org/reference/functions/wp_enqueue_script/
         # https://developer.wordpress.org/reference/functions/plugins_url/
         wp_enqueue_script('shapesns', plugins_url('/js/shapesns.js', dirname(__FILE__)));
+
     }
 
     # TOOD:
