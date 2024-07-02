@@ -4,7 +4,7 @@ namespace ShapeSns;
 
 class Option extends Base
 {
-    protected $key = "ShapSns";
+    protected $key = "ShapeSns";
     protected $option = array(
         'chat_gpt_key' => '',
     );
