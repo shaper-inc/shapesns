@@ -23,8 +23,12 @@ docker compose down --rmi all --volumes --remove-orphans
 
 ## Timber/Twig
 
-- https://ja.wordpress.org/plugins/timber-library/
+- Wordpress プラグインサイトからインストールするとバージョンが古いので動かない
+
+https://timber.github.io/docs/v2/:
 
 ```bash
-docker compose run wordpress wp plugin install timber-library --allow-root
+docker compose run wordpress bash
+cd wp-content/plugins/shapesns/
+composer require timber/timber
 ```
