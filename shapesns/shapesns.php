@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Plugin Name:     Shapesns
- * Plugin URI:      PLUGIN SITE HERE
+ * Plugin URI:      https://github.com/shaper-inc/shapesns
  * Description:     PLUGIN DESCRIPTION HERE
- * Author:          YOUR NAME HERE
- * Author URI:      YOUR SITE HERE
+ * Author:          shpare-inc:
+ * Author URI:      https://github.com/shaper-inc/
  * Text Domain:     shapesns
  * Domain Path:     /languages
  * Version:         0.1.0
