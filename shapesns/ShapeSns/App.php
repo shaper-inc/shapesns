@@ -26,11 +26,26 @@ class App extends AppBase
         );
     }
 
+    function summarize_text($text)
+    {
+        return $text;
+    }
 
     function summarize_post($post_id)
     {
-        # post_id の記事の要約を取得する
-        echo  $post_id;
+
+        $wp_post = get_post($post_id);
+        $meta_key = "記事要約";
+
+        if ($wp_post) {
+            $content = $wp_post->post_content;
+            $title = $wp_post->post_title;
+            $summary = $this->summarize_text($content);
+            if ($summary) {
+                update_post_meta($post_id, $meta_key, $summary);
+            }
+        }
+    }
 
     function action_wp_enqueue_scripts()
     {
@@ -38,7 +53,6 @@ class App extends AppBase
         # https://developer.wordpress.org/reference/functions/wp_enqueue_script/
         # https://developer.wordpress.org/reference/functions/plugins_url/
         wp_enqueue_script('shapesns', plugins_url('/js/shapesns.js', dirname(__FILE__)));
-
     }
 
     # TOOD:
