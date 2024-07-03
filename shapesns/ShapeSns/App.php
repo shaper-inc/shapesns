@@ -28,7 +28,7 @@ class App extends AppBase
 
     function summarize_text($text)
     {
-        return $text;
+        return strip_tags($text);
     }
 
     function summarize_post($post_id)
