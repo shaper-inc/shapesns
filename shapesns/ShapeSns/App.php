@@ -29,7 +29,7 @@ class App extends AppBase
 
     function summarize_text($text)
     {
-        return strip_tags($text);
+        return strip_tags($text);   // 不要文字を抜く
     }
 
     function summarize_post($post_id)
