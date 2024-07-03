@@ -232,3 +232,8 @@ html
 
 # environtment 
 .env
+.envrc
+
+# Composer
+/vendor/
+/shapesns/vendor/
