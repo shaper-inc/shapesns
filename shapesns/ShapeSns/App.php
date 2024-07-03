@@ -103,10 +103,14 @@ class App extends AppBase
 		if (!$postmeta_value) {
 			return;
 		}
-		?>
-		<meta name="<?php echo $this->meta_key ?>" content="<?php echo $postmeta_value ?>"/>
-		<?php
+?>
+		<meta name="<?php echo $this->meta_key ?>" content="<?php echo $postmeta_value ?>" />
+<?php
 	}
 
-	# TODO: wordpress hook を実装する
+	public function action_save_post($post_id)
+	{
+		# wp_postが保存された時の処理
+		$this->summarize_post($post_id);
+	}
 }
