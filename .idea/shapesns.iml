@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/html/wp-includes" isTestSource="false" packagePrefix="PHPMailer" />
+      <sourceFolder url="file://$MODULE_DIR$/html/wp-includes/sodium_compat/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/shapesns" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/openai-php/client" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/php-http/discovery" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/php-http/multipart-stream-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/http-client-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/timber/timber" />
+      <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/twig/twig" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
