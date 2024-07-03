@@ -4,7 +4,6 @@ namespace ShapeSns;
 
 class Admin extends Base
 {
-
 	public function __construct(array $argument = [])
 	{
 	}
@@ -22,6 +21,7 @@ class Admin extends Base
 			$ctx['form'] = $_POST;
 			Option::get_instance()->update($_POST);
 		}
+		$ctx['models'] = Option::get_instance()->get_models();
 
 		\Timber::render('Admin.html', $ctx);
 	}

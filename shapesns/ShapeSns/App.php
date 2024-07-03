@@ -2,6 +2,8 @@
 
 namespace ShapeSns;
 
+use OpenAI;
+
 class App extends AppBase
 {
 	protected mixed $admin = null;
@@ -27,23 +29,59 @@ class App extends AppBase
 		);
 	}
 
-	public function summarize_text($text): string
+	public function preprocess_text($text): string
 	{
-		return strip_tags($text);   // 不要文字を抜く
+		$text = preg_replace('/[\x00-\x1F\x7F]/', '', $text);
+		$text = preg_replace('/\\\r\\\n|\\\r|\\\n/', ' ', $text);
+		$text = preg_replace('/\s+/', ' ', $text);
+		return strip_tags($text);
 	}
 
-	public function summarize_post($post_id): void
+	public function summarize_text($title, $content): string
+	{
+		$processedContent = $this->preprocess_text($content);
+
+		$option = Option::get_instance();
+		$apiKey = $option->openai_api_key;
+		$promptTemplate = $option->prompt;
+		$model = $option->openai_model;
+		$lang = $option->language;
+
+		$prompt = str_replace('{Title}', $title, $promptTemplate);
+		$prompt = str_replace('{Article}', $processedContent, $prompt);
+		$prompt = str_replace('{Language}', $lang, $prompt);
+
+		# debug 出来上がったpromptを出力
+		error_log($prompt);
+
+		$client = OpenAI::client($apiKey);
+
+		$result = $client->chat()->create([
+			'model' => $model,
+			'messages' => [
+				['role' => 'user', 'content' => $prompt],
+			],
+		]);
+
+		return $result->choices[0]->message->content;
+	}
+
+	public function summarize_post($post_id): string
 	{
 		$wp_post = get_post($post_id);
 
 		if ($wp_post) {
-			$content = $wp_post->post_content;
 			$title = $wp_post->post_title;
-			$summary = $this->summarize_text($content);
+			$content = $wp_post->post_content;
+			$summary = $this->summarize_text($title, $content);
 			if ($summary) {
 				update_post_meta($post_id, $this->meta_key, $summary);
 			}
+
+			return $summary;
 		}
+
+		return '';
 	}
 
 	public function action_wp_enqueue_scripts(): void

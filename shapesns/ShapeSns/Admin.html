@@ -4,16 +4,70 @@
 		<table class="form-table permalink-structure">
 			<tr>
 				<th>
-					<label for="id_chat_gpt_key">OpenAI APIキー</label>
+					<label for="id_openai_api_key">OpenAI APIキー</label>
 				</th>
 				<td>
-					<input name="chat_gpt_key" id="id_chat_gpt_key" type="text" value="{{ form.chat_gpt_key }}"
+					<div style="position: relative; display: inline-block;">
+						<input name="openai_api_key" id="id_openai_api_key" type="password"
+							   value="{{ form.openai_api_key }}"
+							   class="regular-text code" style="padding-right: 30px;"/>
+						<span id="toggleApiKey"
+							  style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+							<i class="dashicons dashicons-visibility"></i>
+						</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label for="id_openai_model">OpenAI モデル</label>
+				</th>
+				<td>
+					<input list="openai_models" name="openai_model" id="id_openai_model" value="{{ form.openai_model }}"
 						   class="regular-text code"/>
+					<datalist id="openai_models">
+						{% for model in models %}
+						<option value="{{ model }}">
+							{% endfor %}
+					</datalist>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label for="id_language">言語コード</label>
+				</th>
+				<td>
+					<input name="language" id="id_language" type="text" value="{{ form.language }}"
+						   class="regular-text code"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label for="id_prompt">プロンプト</label>
+				</th>
+				<td>
+					<textarea name="prompt" id="id_prompt" class="large-text code"
+							  rows="20">{{ form.prompt }}</textarea>
 				</td>
 			</tr>
 		</table>
 		<p class="submit">
 			<input type="submit" name="submit" id="submit" class="button button-primary" value="変更を保存"/>
 		</p>
+		<script>
+			document.getElementById('toggleApiKey').addEventListener('click', function () {
+				var apiKeyInput = document.getElementById('id_openai_api_key');
+				var icon = this.querySelector('i');
+				if (apiKeyInput.type === 'password') {
+					apiKeyInput.type = 'text';
+					icon.classList.remove('dashicons-visibility');
+					icon.classList.add('dashicons-hidden');
+				} else {
+					apiKeyInput.type = 'password';
+					icon.classList.remove('dashicons-hidden');
+					icon.classList.add('dashicons-visibility');
+				}
+			});
+		</script>
 	</form>
 </div>

@@ -6,7 +6,23 @@ class Option extends Base
 {
 	protected string $key = "ShapeSns";
 	protected array $option = [
-		'chat_gpt_key' => '',
+		'openai_api_key' => '',
+		'openai_model' => 'gpt-3.5-turbo',
+		'prompt' => "Please summarize the following article in a concise manner in {Language}. The summary should highlight the main points and key details while being under 100 words. Write in a formal tone suitable for a general audience, making the content informative and easy to understand. Ensure the summary is in {Language} and maintains the same meaning as the original article.
+
+# Title: {Title}
+
+# Article: {Article}
+
+# Summary:",
+		"language" => 'en',
+	];
+
+	protected array $openai_models = [
+		'gpt-3.5-turbo',
+		'gpt-4',
+		'gpt-4-turbo',
+		'gpt-4o',
 	];
 
 	public function __construct(array $argument = [])
@@ -21,6 +37,9 @@ class Option extends Base
 	{
 		if (array_key_exists($name, $this->option)) {
 			return $this->option[$name];
+		} else {
+			error_log("__get: $name not found");
+			return null;
 		}
 	}
 
@@ -47,5 +66,10 @@ class Option extends Base
 			}
 		}
 		update_option($this->key, $this->option);
+	}
+
+	public function get_models(): array
+	{
+		return $this->openai_models;
 	}
 }
