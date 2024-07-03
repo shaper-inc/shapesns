@@ -1,16 +1,19 @@
 <div class="wrap">
-  <h2>ShapeSns 設定</h2>
-  <form method="post">
-    <table class="form-table permalink-structure">
-
-      <tr>
-        <th><label for="chat_gpt_key">Chat GPTアクセスキー</label></th>
-        <td> <input name="chat_gpt_key" id="id_chat_gpt_key" type="text" value="{{ form.chat_gpt_key }}" class="regular-text code" /></td>
-      </tr>
-
-    </table>
-
-    <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="変更を保存"  /></p>
-
-  </form>
+	<h2>ShapeSns 設定</h2>
+	<form method="post">
+		<table class="form-table permalink-structure">
+			<tr>
+				<th>
+					<label for="id_chat_gpt_key">OpenAI APIキー</label>
+				</th>
+				<td>
+					<input name="chat_gpt_key" id="id_chat_gpt_key" type="text" value="{{ form.chat_gpt_key }}"
+						   class="regular-text code"/>
+				</td>
+			</tr>
+		</table>
+		<p class="submit">
+			<input type="submit" name="submit" id="submit" class="button button-primary" value="変更を保存"/>
+		</p>
+	</form>
 </div>
