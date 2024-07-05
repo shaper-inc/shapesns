@@ -1,0 +1,99 @@
+.history-item {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.history-title {
+	font-size: 1.2em;
+	margin: 0 0 5px 0;
+}
+
+.history-summary {
+	margin: 0 0 10px 0;
+}
+
+.history-url {
+	color: #0073aa;
+	text-decoration: none;
+}
+
+.history-url:hover {
+	text-decoration: underline;
+}
+
+.history-view-count {
+	margin: 5px 0;
+	font-weight: bold;
+}
+
+.history-delete-button {
+	background-color: #f44336;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-top: 5px;
+}
+
+.history-delete-button:hover {
+	background-color: #d32f2f;
+}
+
+.floating-window {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 400px;
+	max-height: 600px;
+	overflow-y: auto;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	z-index: 1000;
+}
+
+.floating-close-button {
+	background-color: #f44336;
+	color: white;
+	border: none;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	display: none; /* 閉じるボタンを非表示 */
+}
+
+.floating-toggle-button {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	background-color: #0073aa;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1001;
+}
+
+.floating-toggle-button.open {
+	background-color: #0073aa;
+}
+
+.floating-toggle-button.close {
+	background-color: #f44336;
+}
+
+.floating-toggle-button:hover {
+	background-color: #005f8a;
+}
