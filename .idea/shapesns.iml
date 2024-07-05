@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/html/wp-includes" isTestSource="false" packagePrefix="PHPMailer" />
       <sourceFolder url="file://$MODULE_DIR$/html/wp-includes/sodium_compat/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/shapesns" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/shapesns/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/shapesns/vendor/guzzlehttp/promises" />
