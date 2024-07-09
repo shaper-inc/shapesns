@@ -43,6 +43,9 @@ class App extends AppBase
 
 		$option = Option::get_instance();
 		$apiKey = $option->openai_api_key;
+		if (!$apiKey) {
+			return "";
+		}
 		$promptTemplate = $option->prompt;
 		$model = $option->openai_model;
 		$lang = $option->language;
@@ -101,6 +104,12 @@ class App extends AppBase
 		}
 		$postmeta_value = get_post_meta($post->ID, $this->meta_key, true);
 		if (!$postmeta_value) {
+			return;
+		}
+		$option = Option::get_instance();
+		$post_types = $option->post_types;
+		$pt = get_post_type();
+		if (!in_array($pt, $post_types)) {
 			return;
 		}
 ?>
