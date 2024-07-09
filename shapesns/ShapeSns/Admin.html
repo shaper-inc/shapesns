@@ -50,6 +50,18 @@
 							  rows="20">{{ form.prompt }}</textarea>
 				</td>
 			</tr>
+			<tr>
+				<th>
+					<label for="id_post_types">要約表示投稿タイプ</label>
+				</th>
+				<td>
+					<ul id="id_post_types">
+					{% for pt in post_types %}
+						<li><input name="post_types[]" id="id_post_types_{{pt}}"  type="checkbox" value="{{pt}}" {% if pt in form.post_types %}checked{% endif %}>{{ pt}}</li>
+					{% endfor %}
+					</ul>
+				</td>
+			</tr>
 		</table>
 		<p class="submit">
 			<input type="submit" name="submit" id="submit" class="button button-primary" value="変更を保存"/>
