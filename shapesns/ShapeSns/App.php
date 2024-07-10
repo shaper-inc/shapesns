@@ -43,6 +43,9 @@ class App extends AppBase
 
 		$option = Option::get_instance();
 		$apiKey = $option->openai_api_key;
+		if (!$apiKey) {
+			return "";
+		}
 		$promptTemplate = $option->prompt;
 		$model = $option->openai_model;
 		$lang = $option->language;
@@ -80,6 +83,7 @@ class App extends AppBase
 
 			return $summary;
 		}
+
 		return '';
 	}
 
@@ -88,7 +92,6 @@ class App extends AppBase
 		# Javascriptを配信
 		# https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 		# https://developer.wordpress.org/reference/functions/plugins_url/
-		wp_enqueue_style('shapesns-style', plugins_url('/css/shapesns.css', dirname(__FILE__)));
 		wp_enqueue_script('shapesns', plugins_url('/js/shapesns.js', dirname(__FILE__)));
 	}
 
@@ -96,19 +99,22 @@ class App extends AppBase
 	{
 		# ヘッダーに要約を入れる
 		$post = get_post();
-		$is_page = is_page();
-
-		if (!$post || $is_page) {
+		if (!$post) {
 			return;
 		}
 		$postmeta_value = get_post_meta($post->ID, $this->meta_key, true);
 		if (!$postmeta_value) {
 			return;
 		}
-		?>
-		<meta name="<?php echo $this->meta_key ?>" content="<?php echo $postmeta_value ?>"/>
-		<meta name="post_id" content="<?php echo $post->ID ?>"/>
-		<?php
+		$option = Option::get_instance();
+		$post_types = $option->post_types;
+		$pt = get_post_type();
+		if (!in_array($pt, $post_types)) {
+			return;
+		}
+?>
+		<meta name="<?php echo $this->meta_key ?>" content="<?php echo $postmeta_value ?>" />
+<?php
 	}
 
 	public function action_save_post($post_id)

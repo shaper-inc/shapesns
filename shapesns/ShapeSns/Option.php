@@ -16,6 +16,7 @@ class Option extends Base
 
 # Summary:",
 		"language" => 'en',
+		"post_types" => [],
 	];
 
 	protected array $openai_models = [
@@ -71,5 +72,11 @@ class Option extends Base
 	public function get_models(): array
 	{
 		return $this->openai_models;
+	}
+
+	public function get_post_types(): array
+	{
+		# 定義されている投稿タイプ
+		return get_post_types();
 	}
 }

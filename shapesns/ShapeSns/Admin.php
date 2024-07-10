@@ -21,7 +21,9 @@ class Admin extends Base
 			$ctx['form'] = $_POST;
 			Option::get_instance()->update($_POST);
 		}
+
 		$ctx['models'] = Option::get_instance()->get_models();
+		$ctx['post_types'] = Option::get_instance()->get_post_types();
 
 		\Timber::render('Admin.html', $ctx);
 	}
