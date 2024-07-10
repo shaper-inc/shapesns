@@ -56,9 +56,11 @@
 				</th>
 				<td>
 					<ul id="id_post_types">
-					{% for pt in post_types %}
-						<li><input name="post_types[]" id="id_post_types_{{pt}}"  type="checkbox" value="{{pt}}" {% if pt in form.post_types %}checked{% endif %}>{{ pt}}</li>
-					{% endfor %}
+						{% for pt in post_types %}
+						<li><input name="post_types[]" id="id_post_types_{{pt}}" type="checkbox" value="{{pt}}" {% if pt
+								   in form.post_types %}checked{% endif %}>{{ pt}}
+						</li>
+						{% endfor %}
 					</ul>
 				</td>
 			</tr>
