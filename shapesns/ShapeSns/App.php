@@ -112,8 +112,17 @@ class App extends AppBase
 		if (!in_array($pt, $post_types)) {
 			return;
 		}
+		$leading = $option->leading;
+		$tags = $option->tags;
 ?>
 		<meta name="<?php echo $this->meta_key ?>" content="<?php echo $postmeta_value ?>" />
+		<script type="text/javascript" id="shapsns-global">
+			var shapeSns = {
+				loading: "<?php echo $leading ?>",
+				tags: "<?php echo $tags ?>"
+			};
+		</script>
+
 <?php
 	}
 
