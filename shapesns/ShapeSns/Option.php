@@ -17,6 +17,8 @@ class Option extends Base
 # Summary:",
 		"language" => 'en',
 		"post_types" => [],
+		"leading" => '', 	# 投稿頭出し
+		"tags" => '',	# ハッシュタグ
 	];
 
 	protected array $openai_models = [
