@@ -13,29 +13,29 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$USER_HOME$/OrbStack/docker/volumes/shapesns_shapesns-wordpress" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/openai-php/client" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/timber/timber" />
       <path value="$PROJECT_DIR$/shapesns/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/shapesns/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/php-http/multipart-stream-builder" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/php-http/discovery" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/openai-php/client" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/shapesns/vendor/symfony/http-client" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/shapesns/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/shapesns/vendor/symfony/http-client-contracts" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/shapesns/vendor/composer" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/php-http/multipart-stream-builder" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/php-http/discovery" />
       <path value="$PROJECT_DIR$/shapesns/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/twig/twig" />
-      <path value="$PROJECT_DIR$/shapesns/vendor/timber/timber" />
+      <path value="$PROJECT_DIR$/shapesns/vendor/guzzlehttp/promises" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
@@ -111,6 +111,11 @@
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/shapesns/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/shapesns/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
